@@ -1,0 +1,25 @@
+{
+    "manifest_version":3,
+    "name": "WebMe",
+    "description": "displays search history and personalized suggested websites",
+    "version": "1.0.0",
+    "action": {
+        "default_popup": "adsPage.html"
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAojuosAYP3W965OHlNny9V55FeDoxFO0OPD0TNbug1X313zmcPsji4Xl6xDqQossfi0S5Elp0AbsJTjITQHslfudlX4R5dAyA/0QIkhmDiA5dodNR7bvLor52bhS2ExnbsWm+ifKGcz81l+0BpKAZ7nukfIOfmb8l8t5+YZxUTJvZf+2QzK5NimTWce/PFV+1bnvMWDpGG6jBHXQuz8U1ij48C06IVh820CTCPGcTud6TNqHPUyLh6zyWU5ce60ag181LU7UgxaDtGkB0OPHxptz1hZ7xhbvNeWznsV1girDOB4+IwnstA3SQHXVKzEHHELFadixTy+5cIEmSsxkgYwIDAQAB",
+    "oauth2": {
+        "client_id":"446553139118-r8duk8oaj7i2034estnn30utho66l89c.apps.googleusercontent.com",
+        "scopes":["https://www.googleapis.com/auth/userinfo.profile"]
+    },
+    "content_scripts": [
+        { 
+            "matches": ["https://*.example.com/*"],
+            "js": ["personalAd.js"]
+        }
+    ],
+    "host_permission": "http://localhost:3000",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["tabs", "nativeMessaging", "identity"]
+}
